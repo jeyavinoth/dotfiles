@@ -24,6 +24,14 @@ keymap.set('n', '<C-w>z', ':ZenMode<cr>', { silent = true }) -- ZenMode
 keymap.set('n', '<C-w>s', '<C-w>s<C-w>w') -- Horizontal split
 keymap.set('n', '<C-w>v', '<C-w>v<C-w>w') -- Vertical split
 
+keymap.set('n', '<leader>w', '<C-w>') -- Vertical split
+-- keymap.set('n', '<leader>ws', '<C-w>s<C-w>w') -- Horizontal split
+-- keymap.set('n', '<leader>wv', '<C-w>v<C-w>w') -- Vertical split
+-- keymap.set('n', '<leader>wh', '<C-w>h') -- Window movements
+-- keymap.set('n', '<leader>wj', '<C-w>j') -- Window movements
+-- keymap.set('n', '<leader>wk', '<C-w>k') -- Window movements
+-- keymap.set('n', '<leader>wl', '<C-w>l') -- Window movements
+
 -- Tabs
 -- keymap.set('n', 'se', ':tabedit %<Return>', { silent = true }) -- tabedit current buffer
 -- keymap.set('n', 'st', ':tabnew<Return>', { silent = true }) -- tab new
@@ -40,11 +48,20 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><down>', '<C-w>+')
 keymap.set('n', '<C-w><up>', '<C-w>-')
 
+-- Resizing windows
+keymap.set('n', '<leader>wH', '<C-w><')
+keymap.set('n', '<leader>wL', '<C-w>>')
+keymap.set('n', '<leader>wK', '<C-w>+')
+keymap.set('n', '<leader>wJ', '<C-w>-')
+
 -- Clipboard yanks & paste
 keymap.set('', '<leader>y', '"+y')
 keymap.set('', '<leader>p', '"+p')
 keymap.set('', '<leader>Y', '"+Y')
 keymap.set('', '<leader>P', '"+P')
+
+-- paste in new line
+keymap.set('', '<C-p>', ':put<CR>')
 
 keymap.set('', '<leader>r', '"_') -- empty register
 

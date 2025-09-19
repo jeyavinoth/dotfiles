@@ -14,6 +14,8 @@ return packer.startup(
         use 'tjdevries/colorbuddy.nvim'
         use 'Shatur/neovim-ayu'
         use "folke/tokyonight.nvim"
+        use { "catppuccin/nvim", as = "catppuccin" }
+        use { "rose-pine/neovim", as = "rose-pine" }
 
         use 'ellisonleao/gruvbox.nvim'
         -- use 'sainnhe/gruvbox-material'
