@@ -1,9 +1,9 @@
-local status, lspconfig = pcall(require, 'lspconfig')
-if (not status) then return end
+-- local status, lspconfig = pcall(require, 'lspconfig')
+-- if (not status) then return end
 
 -- local protocol = require('vim.lsp.protocol')
 
-lspconfig.lua_ls.setup {
+vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
             diagnostics = {
@@ -11,7 +11,8 @@ lspconfig.lua_ls.setup {
             }
         }
     }
-}
+})
+vim.lsp.enable("lua_ls")
 
 -- -- Python
 -- lspconfig.pyright.setup {}

@@ -38,10 +38,9 @@ local local_servers = {
 }
 
 for _, lsp in ipairs(local_servers) do
-    lspconfig[lsp].setup {
-        -- on_attach = my_custom_on_attach,
-        capabilities = capabilities,
-    }
+    vim.lsp.config(lsp, {
+        capabilities=capabilities,
+    })
 end
 
 cmp.setup {

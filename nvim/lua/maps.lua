@@ -61,7 +61,7 @@ keymap.set('', '<leader>Y', '"+Y')
 keymap.set('', '<leader>P', '"+P')
 
 -- paste in new line
-keymap.set('', '<C-p>', ':put<CR>')
+keymap.set('', '<C-p>', ':put<CR>==')
 
 keymap.set('', '<leader>r', '"_') -- empty register
 
