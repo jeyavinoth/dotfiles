@@ -127,3 +127,18 @@ vim.api.nvim_set_keymap('i', '<C-l>', 'copilot#Accept("<CR>")', { expr=true, nor
 -- quickly enable/disable copilot
 vim.keymap.set("n", "<leader>cd", ":Copilot disable <CR>", {})
 vim.keymap.set("n", "<leader>ce", ":Copilot enable <CR>", {})
+
+-- Diagnostics
+vim.keymap.set('n', '<C-i>', vim.diagnostic.open_float, { noremap = true, silent = true })
+
+-- quiCk fix next and after
+vim.keymap.set('n', '<M-j>', "<cmd>cnext<CR>")
+vim.keymap.set('n', '<M-k>', "<cmd>cprev<CR>")
+
+-- -- Trouble
+-- vim.keymap.set('n','<leader>xx','<cmd>Trouble diagnostics toggle<cr>', { noremap = true })
+-- vim.keymap.set('n','<leader>xX',"<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { noremap = true })
+-- vim.keymap.set('n','<leader>cs',"<cmd>Trouble symbols toggle focus=false<cr>", { noremap = true })
+-- vim.keymap.set('n','<leader>cl',"<cmd>Trouble lsp toggle focus=false win.position=right<cr>", { noremap = true })
+-- vim.keymap.set('n','<leader>xL',"<cmd>Trouble loclist toggle<cr>", { noremap = true })
+-- vim.keymap.set('n','<leader>xQ',"<cmd>Trouble qflist toggle<cr>", { noremap = true })

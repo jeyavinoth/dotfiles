@@ -54,9 +54,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 
-
-
-
 -- -- this doesn't work, figure this out
 -- local on_attach = function(client, bufnr)
 --     -- formatting
