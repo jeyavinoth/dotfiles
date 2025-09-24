@@ -142,3 +142,12 @@ vim.keymap.set('n', '<M-k>', "<cmd>cprev<CR>")
 -- vim.keymap.set('n','<leader>cl',"<cmd>Trouble lsp toggle focus=false win.position=right<cr>", { noremap = true })
 -- vim.keymap.set('n','<leader>xL',"<cmd>Trouble loclist toggle<cr>", { noremap = true })
 -- vim.keymap.set('n','<leader>xQ',"<cmd>Trouble qflist toggle<cr>", { noremap = true })
+
+-- Quickfix diagnostics
+vim.keymap.set("n", "<leader>dd", function()
+    vim.diagnostic.setqflist({
+        open = true,
+        title = "Diagnostics",
+        severity = {min = vim.diagnostic.severity.HINT}
+    })
+end, {desc = "populate quickfix with diagnostics"})
