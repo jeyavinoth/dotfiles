@@ -168,6 +168,17 @@ return packer.startup(
         -- Telescope lsp-handlers (shows gr, etc in telescope)
         use 'Slotos/telescope-lsp-handlers.nvim'
 
+        -- SQL
+        use ({
+            'kristijanhusak/vim-dadbod-ui',
+            requires = {
+                'tpope/vim-dadbod',
+                'kristijanhusak/vim-dadbod-completion', -- Optional
+            },
+        })
+
+        use ({'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }})
+
 
     end
 )
