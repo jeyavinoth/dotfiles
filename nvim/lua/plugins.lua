@@ -168,16 +168,30 @@ return packer.startup(
         -- Telescope lsp-handlers (shows gr, etc in telescope)
         use 'Slotos/telescope-lsp-handlers.nvim'
 
-        -- SQL
+        -- SQL, PSQL connection
+        use ({'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }})
         use ({
             'kristijanhusak/vim-dadbod-ui',
             requires = {
                 'tpope/vim-dadbod',
-                'kristijanhusak/vim-dadbod-completion', -- Optional
             },
         })
 
-        use ({'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }})
+        -- Vim maximizer
+        use {
+            "0x00-ketsu/maximizer.nvim",
+            config = function()
+                require("maximizer").setup {
+                    -- your configuration comes here
+                    -- or leave it empty to use the default settings
+                    -- refer to the configuration section below
+                }
+            end
+        }
+
+        -- Oil (file explorer)
+        use 'stevearc/oil.nvim'
+
 
 
     end

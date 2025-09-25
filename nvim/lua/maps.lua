@@ -101,7 +101,7 @@ keymap.set("n", "<leader>vn", "<Plug>VimspectorStepOver", opts)
 keymap.set("n", "<leader>vS", "<Plug>VimspectorStepOut", opts)
 keymap.set("n", "<leader>vs", "<Plug>VimspectorStepInto", opts)
 
--- Vimslime binds 
+-- Vimslime binds
 -- keymap.set("n", "<C-c><C-s>", ":SlimeSend<CR>", opts)
 keymap.set("n", "<C-c><C-j>", ":SlimeSend<CR>", opts)
 
@@ -119,7 +119,7 @@ keymap.set("n", "<leader>E", "<cmd>set noreadonly<CR>", { noremap = true })
 -- keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
 -- keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 
--- Nvim-tree 
+-- Nvim-tree
 keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { noremap = true })
 
 -- Copilot remappings (using C-l because C-j/C-k interfere with cmp tab completions)
@@ -151,3 +151,8 @@ vim.keymap.set("n", "<leader>dd", function()
         severity = {min = vim.diagnostic.severity.HINT}
     })
 end, {desc = "populate quickfix with diagnostics"})
+
+-- Vim maximizer
+vim.keymap.set('n', '<leader>m', '<cmd>lua require("maximizer").toggle()<CR>', {silent = true, noremap = true})
+-- vim.keymap.set('n', '<leader>mm', '<cmd>lua require("maximizer").maximize()<CR>', {silent = true, noremap = true})
+-- vim.keymap.set('n', '<leader>mr', '<cmd>lua require("maximizer").restore()<CR>', {silent = true, noremap = true})
