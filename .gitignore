@@ -1,3 +1,7 @@
+# Claude files
+*.claude
+CLAUDE.md
+
 # Temporary Files
 *.swp
 *.swo

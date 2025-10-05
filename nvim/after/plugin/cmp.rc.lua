@@ -50,8 +50,8 @@ cmp.setup {
         end,
     },
     sources = {
-        {name = "nvim_lsp"},
-        {name = "buffer"},
+        {name = "nvim_lsp", keyword_length=1},
+        {name = "buffer", keyword_length=1},
     },
 
     mapping = cmp.mapping.preset.insert({
@@ -87,7 +87,7 @@ cmp.setup {
 
 cmp.setup.filetype({"sql"}, {
     sources = {
-        {name = "vim-dadbod-completion"},
-        {name = "buffer"},
+        {name = "vim-dadbod-completion", keyword_length=1},
+        {name = "buffer", keyword_length=1},
     }
 })

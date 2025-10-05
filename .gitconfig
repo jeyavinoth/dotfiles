@@ -15,16 +15,17 @@
 	tool = nvimdiff
 
 [diff "nvimdiff"]
-    cmd = "/home/jj/Software/nvim-linux-x86_64.appimage -d \"$LOCAL\" \"$REMOTE\""
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [difftool]
     prompt = false
 
 [merge]
     tool = nvimdiff
+	tool = /home/jj/Software/nvim-linux-x86_64.appimage
 
 [difftool "nvimdiff"]
-    cmd = "/home/jj/Software/nvim-linux-x86_64.appimage -d \"$LOCAL\" \"$REMOTE\""
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [mergetool]
 	keepBackup = false

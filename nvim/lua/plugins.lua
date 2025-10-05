@@ -192,7 +192,8 @@ return packer.startup(
         -- Oil (file explorer)
         use 'stevearc/oil.nvim'
 
-
+        -- auto complete filenames into vim 
+        use 'kiyoon/telescope-insert-path.nvim'
 
     end
 )
