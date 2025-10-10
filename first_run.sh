@@ -25,3 +25,4 @@ ln -s ${PWD}/nvim ~/.config/nvim
 zsh_append=${PWD}/zsh_append.sh
 grep -qxF "source ${zsh_append}" ~/.zshrc || echo "source ${zsh_append}" >> ~/.zshrc
 
+echo "alias v=nvim" >> ~/.zshrc
