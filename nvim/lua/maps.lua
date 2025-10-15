@@ -60,6 +60,9 @@ keymap.set('', '<leader>p', '"+p')
 keymap.set('', '<leader>Y', '"+Y')
 keymap.set('', '<leader>P', '"+P')
 
+-- Delete without chaging registers
+keymap.set('', '<leader>x', '"_x')
+
 -- paste in new line
 keymap.set('', '<C-p>', ':put<CR>==')
 
@@ -156,3 +159,6 @@ end, {desc = "populate quickfix with diagnostics"})
 vim.keymap.set('n', '<leader>m', '<cmd>lua require("maximizer").toggle()<CR>', {silent = true, noremap = true})
 -- vim.keymap.set('n', '<leader>mm', '<cmd>lua require("maximizer").maximize()<CR>', {silent = true, noremap = true})
 -- vim.keymap.set('n', '<leader>mr', '<cmd>lua require("maximizer").restore()<CR>', {silent = true, noremap = true})
+
+-- Save buffer like an editor
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<Cmd>w<CR>', { noremap = true, silent = true })

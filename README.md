@@ -1,14 +1,18 @@
 # Neovim 
 
-1. Install Packer package installer  "https://github.com/wbthomason/packer.nvim"
-2. Then link the folder nvim to ~/.config/nvim
-3. Setup vim alias as nvim 
-4. Open vim and then run :PackerInstall (the first install will cause issues with :TSUpdate [treesitter])
-5. Then install debugpy :VimspectorInstall debugpy
-6. brew install pyright <-- install pyright langserver
-7. pip install neovim
-8. pip install python-lsp-server
-9. pip install pyright flake8 black isort  # formatting stuff 
+ 1. install xclip for a copy "sudo apt install xclip"
+ 2. Install Packer package installer  "https://github.com/wbthomason/packer.nvim"
+ 3. Then link the folder nvim to ~/.config/nvim
+ 4. Install packer from "https://github.com/wbthomason/packer.nvim"
+ 5. Install tmux tmp from "https://github.com/tmux-plugins/tpm"
+ 6. Then open tmux and hit "ctrl+b I" to install the tpm plugins, "ctrl+b R" to reload source
+ 6. Setup vim alias as nvim 
+ 7. Open vim and then run :PackerInstall (the first install will cause issues with :TSUpdate [treesitter])
+ 8. Then install debugpy :VimspectorInstall debugpy (I dont use this anymore)
+ 9. brew install pyright <-- install pyright langserver
+10. pip install neovim
+11. pip install python-lsp-server
+12. pip install pyright flake8 black isort  # formatting stuff 
 
 
 # Hammerspoon

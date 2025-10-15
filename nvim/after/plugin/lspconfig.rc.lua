@@ -16,10 +16,11 @@ vim.lsp.enable("lua_ls")
 
 -- -- Python
 -- lspconfig.pyright.setup {}
---
--- -- Typescript, Javascript
--- lspconfig.ts_ls.setup {}
---
+
+-- Typescript, Javascript
+vim.lsp.enable("javascript")
+vim.lsp.enable("typescript")
+
 -- -- Lua
 -- lspconfig.lua_ls.setup {}
 

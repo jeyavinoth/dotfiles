@@ -28,8 +28,8 @@ vim.opt.background = 'dark'
 -- -- let ayucolor="light"  " for light version of theme
 -- -- let ayucolor="mirage" " for mirage version of theme
 
--- vim.cmd([[ colorscheme gruvbox ]])
-vim.cmd([[ colorscheme cyberdream ]])
+vim.cmd([[ colorscheme gruvbox ]])
+-- vim.cmd([[ colorscheme cyberdream ]])
 
 -- vim.cmd([[ colorscheme molokai ]])
 -- vim.cmd([[ let g:molokai_original = 1 ]])
