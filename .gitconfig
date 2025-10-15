@@ -20,12 +20,12 @@
 [difftool]
     prompt = false
 
-[merge]
-    tool = nvimdiff
-	tool = /home/jj/Software/nvim-linux-x86_64.appimage
-
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
-[mergetool]
-	keepBackup = false
+[merge]
+    tool = nvim
+[mergetool "nvim"]
+    cmd = "nvim -d $LOCAL $MERGED $REMOTE -c 'wincmd l' -c 'norm ]c'"
+    keepBackup = false
+    prompt = false
