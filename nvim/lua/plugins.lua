@@ -22,6 +22,8 @@ return packer.startup(
         use 'ellisonleao/gruvbox.nvim'
         -- use 'sainnhe/gruvbox-material'
 
+        use 'navarasu/onedark.nvim'
+
         use 'hoob3rt/lualine.nvim'         -- statusline
 
         use 'kyazdani42/nvim-web-devicons' -- file icons
