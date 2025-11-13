@@ -61,7 +61,7 @@ keymap.set('', '<leader>Y', '"+Y')
 keymap.set('', '<leader>P', '"+P')
 
 -- Delete without chaging registers
-keymap.set('', '<leader>x', '"_x')
+keymap.set('n', 'd', '"_d')
 
 -- paste in new line
 keymap.set('', '<C-p>', ':put<CR>==')

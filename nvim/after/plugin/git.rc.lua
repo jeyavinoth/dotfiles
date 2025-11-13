@@ -7,5 +7,6 @@ git.setup {
         blame = "<leader>gb",
         -- Open file in git repository
         browse = "<leader>go",
+        browser_cmd = 'xdg-open', -- For Linux
     }
 }

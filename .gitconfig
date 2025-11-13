@@ -8,7 +8,7 @@
   lg = !"git lg1"
 
 [core]
-	editor = nvim
+	editor = nvim -f
 	excludesfile = ~/.gitignore
 
 [diff]
