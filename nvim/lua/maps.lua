@@ -61,7 +61,7 @@ keymap.set('', '<leader>Y', '"+Y')
 keymap.set('', '<leader>P', '"+P')
 
 -- Delete without chaging registers
-keymap.set('', '<leader>x', '"_x')
+keymap.set('n', 'd', '"_d')
 
 -- paste in new line
 keymap.set('', '<C-p>', ':put<CR>==')
@@ -132,7 +132,7 @@ vim.keymap.set("n", "<leader>cd", ":Copilot disable <CR>", {})
 vim.keymap.set("n", "<leader>ce", ":Copilot enable <CR>", {})
 
 -- Diagnostics
-vim.keymap.set('n', '<C-i>', vim.diagnostic.open_float, { noremap = true, silent = true })
+-- vim.keymap.set('n', '<C-k>i', vim.diagnostic.open_float, { noremap = true, silent = true })
 
 -- quiCk fix next and after
 vim.keymap.set('n', '<M-j>', "<cmd>cnext<CR>")
