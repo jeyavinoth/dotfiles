@@ -132,7 +132,7 @@ vim.keymap.set("n", "<leader>cd", ":Copilot disable <CR>", {})
 vim.keymap.set("n", "<leader>ce", ":Copilot enable <CR>", {})
 
 -- Diagnostics
-vim.keymap.set('n', '<C-i>', vim.diagnostic.open_float, { noremap = true, silent = true })
+vim.keymap.set('n', '<C-k>i', vim.diagnostic.open_float, { noremap = true, silent = true })
 
 -- quiCk fix next and after
 vim.keymap.set('n', '<M-j>', "<cmd>cnext<CR>")
