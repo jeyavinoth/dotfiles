@@ -46,10 +46,11 @@ precmd() {
 
     if [[ -n $VIRTUAL_ENV ]]; then
         local venv_name=$(basename $VIRTUAL_ENV)
-        local user_host='%{$fg[green]%}(%{$fg[yellow]%}'${venv_name}'%{$fg[green]%})%{$reset_color%} '
+        local user_host='%{$fg[green]%}(%{$fg[yellow]%}'${venv_name}'%{$fg[green]%})%{$reset_color%}: '
     else
-        local user_host='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}'
+        # local user_host='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: '
+        local user_host=''
     fi
 
-    PROMPT="${user_host}:%{$fg[blue]%}%B%~%b%{$reset_color%}\$(git_prompt_info) %{$fg[red]%}%(!.#.»)%{$reset_color%} "
+    PROMPT="${user_host}%{$fg[blue]%}%B%~%b%{$reset_color%}\$(git_prompt_info) %{$fg[red]%}%(!.#.»)%{$reset_color%} "
 }
