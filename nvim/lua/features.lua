@@ -31,6 +31,6 @@ autocmd('TextYankPost', {
 --     require('win')
 -- end
 
-vim.api.nvim_set_option('clipboard', 'unnamed')
+vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
 

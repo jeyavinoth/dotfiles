@@ -54,7 +54,7 @@ keymap.set('n', '<leader>wL', '<C-w>>')
 keymap.set('n', '<leader>wK', '<C-w>+')
 keymap.set('n', '<leader>wJ', '<C-w>-')
 
--- Clipboard yanks & paste
+-- Clipboard yanks (copy) & paste
 keymap.set('', '<leader>y', '"+y')
 keymap.set('', '<leader>p', '"+p')
 keymap.set('', '<leader>Y', '"+Y')
