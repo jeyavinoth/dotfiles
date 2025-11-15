@@ -42,7 +42,7 @@ VIRTUAL_ENV_DISABLE_PROMPT=1
 # Hook into af-magic theme to replace username@hostname with virtualenv
 precmd() {
     # Print separator line that spans terminal width (dimmed/transparent look)
-    print -P '%F{240}${(l:$COLUMNS::-:)}%f'
+    print -P '%F{232}${(l:$COLUMNS::-:)}%f'
 
     if [[ -n $VIRTUAL_ENV ]]; then
         local venv_name=$(basename $VIRTUAL_ENV)
