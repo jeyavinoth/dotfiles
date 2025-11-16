@@ -63,6 +63,7 @@ keymap.set('', '<leader>P', '"+P')
 -- Delete without chaging registers
 -- keymap.set('n', 'd', '"_d')
 keymap.set('n', '<leader>d', '"_d')
+keymap.set('n', '<leader>x', '"_x')
 
 -- paste in new line
 keymap.set('', '<C-p>', ':put<CR>==')
@@ -147,14 +148,14 @@ vim.keymap.set('n', '<M-k>', "<cmd>cprev<CR>")
 -- vim.keymap.set('n','<leader>xL',"<cmd>Trouble loclist toggle<cr>", { noremap = true })
 -- vim.keymap.set('n','<leader>xQ',"<cmd>Trouble qflist toggle<cr>", { noremap = true })
 
--- Quickfix diagnostics
-vim.keymap.set("n", "<leader>dd", function()
-    vim.diagnostic.setqflist({
-        open = true,
-        title = "Diagnostics",
-        severity = {min = vim.diagnostic.severity.HINT}
-    })
-end, {desc = "populate quickfix with diagnostics"})
+-- -- Quickfix diagnostics
+-- vim.keymap.set("n", "<leader>dd", function()
+--     vim.diagnostic.setqflist({
+--         open = true,
+--         title = "Diagnostics",
+--         severity = {min = vim.diagnostic.severity.HINT}
+--     })
+-- end, {desc = "populate quickfix with diagnostics"})
 
 -- Vim maximizer
 vim.keymap.set('n', '<leader>m', '<cmd>lua require("maximizer").toggle()<CR>', {silent = true, noremap = true})
