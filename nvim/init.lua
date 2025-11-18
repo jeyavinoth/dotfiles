@@ -18,7 +18,6 @@ require "base"
 -- load plugins and plugin settings
 require("lazy").setup("plugins")
 
-require "themes"
 require "features"
 
 -- load keymaps
