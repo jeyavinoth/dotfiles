@@ -8,16 +8,26 @@ vim.g.loaded_netrwPlugin = 1
 -- -- set termguicolors to enable highlight groups
 -- vim.opt.termguicolors = true
 
+-- Custom keymappings function (replaces view.mappings)
+local function on_attach(bufnr)
+  local api = require('nvim-tree.api')
+
+  -- Default mappings
+  api.config.mappings.default_on_attach(bufnr)
+
+  -- Custom mappings
+  local opts = { buffer = bufnr, noremap = true, silent = true, nowait = true }
+
+  -- 'u' to go up a directory
+  vim.keymap.set('n', 'u', api.tree.change_root_to_parent, opts)
+end
+
 -- setup with some options
 require("nvim-tree").setup({
+  on_attach = on_attach,
   sort_by = "case_sensitive",
   view = {
     adaptive_size = false,
-    -- mappings = {
-    --   list = {
-    --     { key = "u", action = "dir_up" },
-    --   },
-    -- },
   },
   renderer = {
     group_empty = true,
@@ -26,20 +36,3 @@ require("nvim-tree").setup({
     dotfiles = false,
   },
 })
-
--- require("nvim-tree").setup({
---   on_attach = function(bufnr)
---     local api = require("nvim-tree.api")
---
---     local function opts(desc)
---       return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
---     end
---
---     -- Default mappings
---     api.config.mappings.default_on_attach(bufnr)
---
---     -- Custom mappings
---     vim.keymap.set("n", "r", api.tree.reload_and_descend, opts("Reload"))
---     vim.keymap.set("n", "H", api.node.toggle_hidden_filter, opts("Toggle Hidden"))
---   end,
--- })
