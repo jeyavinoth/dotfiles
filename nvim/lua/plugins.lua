@@ -1,142 +1,131 @@
-local status, packer = pcall(require, 'packer')
-if (not status) then
-    print("Packer is not installed")
-    return
-end
+return {
+  -- Colorschemes
+  'tjdevries/colorbuddy.nvim',
 
-vim.cmd [[packadd packer.nvim]]
+  {
+    'svrana/neosolarized.nvim',
+    dependencies = { 'tjdevries/colorbuddy.nvim' }
+  },
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin'
+  },
+  'EdenEast/nightfox.nvim',
+  'ellisonleao/gruvbox.nvim',
+  'tomasr/molokai',
+  'jnurmine/Zenburn',
+  'gosukiwi/vim-atom-dark',
+  'shaunsingh/nord.nvim',
+  'Mofiqul/dracula.nvim',
+  -- 'ayu-theme/ayu-vim' -- Use the one below instead
+  'Shatur/neovim-ayu',
+  'rose-pine/neovim',
+  'cocopon/iceberg.vim',
 
-return packer.startup(
-    function(use)
-        use 'wbthomason/packer.nvim'
+  'hoob3rt/lualine.nvim', -- statusline
 
-        -- Colorschemes
-        use 'tjdevries/colorbuddy.nvim'
+  'kyazdani42/nvim-web-devicons', -- file icons
 
-        use { 'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' } }
-        use { 'catppuccin/nvim', as = 'catppuccin' }
-        use 'EdenEast/nightfox.nvim' -- Packer
-        use 'ellisonleao/gruvbox.nvim'
-        use 'tomasr/molokai'
-        use 'jnurmine/Zenburn'
-        use 'gosukiwi/vim-atom-dark'
-        use 'shaunsingh/nord.nvim'
-        use 'Mofiqul/dracula.nvim'
-        -- use 'ayu-theme/ayu-vim' -- Use the one below instead
-        use 'Shatur/neovim-ayu'
-        use 'rose-pine/neovim'
-        use 'cocopon/iceberg.vim'
+  -- LSP setup using built-in vim.lsp.config (nvim-lspconfig is deprecated in nvim 0.11+)
+  "williamboman/mason.nvim",
 
-        use 'hoob3rt/lualine.nvim'         -- statusline
+  'onsails/lspkind-nvim', -- vscode-like pictograms
+  'hrsh7th/cmp-buffer',   -- nvim-cmp source for buffer words
+  'hrsh7th/cmp-nvim-lsp', -- nvim-cmp source for neovim
+  'hrsh7th/nvim-cmp',     -- Completion
+  'L3MON4D3/LuaSnip',     -- Snippet
 
-        use 'kyazdani42/nvim-web-devicons' -- file icons
+  {
+    'nvim-treesitter/nvim-treesitter', -- Treesitter
+    build = ':TSUpdate'
+  },
+  'nvim-treesitter/nvim-treesitter-context', -- the sticky header thing at the top
 
-        -- another alternative is lsp-zero (https://github.com/VonHeikemen/lsp-zero.nvim)
-        use {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-            "neovim/nvim-lspconfig",
-        }
-        use 'onsails/lspkind-nvim' -- vscode-like pictograms
-        use 'hrsh7th/cmp-buffer'   -- nvim-cmp source for buffer words
-        use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim
-        use 'hrsh7th/nvim-cmp'     -- Completion
-        use 'L3MON4D3/LuaSnip'     -- Snippet
+  {
+    'glepnir/lspsaga.nvim',
+    branch = "main",
+    config = function()
+      require("lspsaga").setup({})
+    end,
+    dependencies = { "nvim-tree/nvim-web-devicons" }
+  },
+  'ray-x/lsp_signature.nvim', -- LSP signature
 
+  -- use ({
+  --     'glepnir/lspsaga.nvim',
+  --     branch = "main",
+  --     dependencies = { "nvim-tree/nvim-web-devicons" }
+  -- })
 
-        use {
-            'nvim-treesitter/nvim-treesitter', -- Tresitter
-            run = ':TSUpdate'
-        }
-        use 'nvim-treesitter/nvim-treesitter-context' -- the sticky header thing at the top
+  -- use({
+  --     'ray-x/navigator.lua',
+  --     dependencies = {
+  --         { 'ray-x/guihua.lua', build = 'cd lua/fzy && make' },
+  --     },
+  -- })
+  -- 'ray-x/lsp_signature.nvim' -- LSP signature
 
-        use({
-            'glepnir/lspsaga.nvim',
-            branch = "main",
-            config = function()
-                require("lspsaga").setup({})
-            end,
-            requires = { { "nvim-tree/nvim-web-devicons" } }
-        })
-        use 'ray-x/lsp_signature.nvim' -- LSP signature
+  -- Fast editing
+  'tpope/vim-surround',  -- surround words, etc ysw)
+  'tpope/vim-repeat',    -- updated . repeat
+  'tomtom/tcomment_vim', -- gcc comment
 
-        -- use ({
-        --     'glepnir/lspsaga.nvim',
-        --     branch = "main",
-        --     requires = { {"nvim-tree/nvim-web-devicons"} }
-        -- })
+  -- Git
+  -- 'airblade/vim-gitgutter' -- shows the +/- for git changes
+  'tpope/vim-fugitive',      -- git integration
+  'dinhhuy258/git.nvim',     -- git integration built on top of vim-fugitive
+  'lewis6991/gitsigns.nvim', -- git integration built on top of vim-fugitive
 
-        -- use({
-        --     'ray-x/navigator.lua',
-        --     requires = {
-        --         { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-        --     },
-        -- })
-        -- use 'ray-x/lsp_signature.nvim' -- LSP signature
+  -- File navigation
+  'nvim-lua/plenary.nvim', -- common utilities
+  {
+    'nvim-telescope/telescope.nvim', -- Telescope (fuzzy file finder)
+    branch = '0.1.x',
+  },
+  'nvim-telescope/telescope-file-browser.nvim',
+  'ThePrimeagen/harpoon', -- harpoon to fast switching files
 
-        -- Fast editing
-        use 'tpope/vim-surround'  -- sorround words, etc ysw)
-        use 'tpope/vim-repeat'    -- updated . repeat
-        use 'tomtom/tcomment_vim' -- gcc comment
+  -- Auto pairs
+  'windwp/nvim-autopairs', -- autopairs
+  -- 'windwp/nvim-ts-autotag' -- typescript ?
 
-        -- Git
-        -- use 'airblade/vim-gitgutter' -- shows the +/- for git changes
-        use 'tpope/vim-fugitive'      -- git integration
-        use 'dinhhuy258/git.nvim'     -- git integration built on top of vim-fugitive
-        use 'lewis6991/gitsigns.nvim' -- git integration built on top of vim-fugitive
+  'norcalli/nvim-colorizer.lua', -- colorizer to show hex colors
 
-        -- File navigation
-        use 'nvim-lua/plenary.nvim'          -- common utilities
-        use {
-            'nvim-telescope/telescope.nvim', -- Telescope (fuzzy file finder)
-            branch = '0.1.x',
-        }
-        use 'nvim-telescope/telescope-file-browser.nvim'
-        use 'ThePrimeagen/harpoon' -- harpoon to fast switching files
+  'preservim/tagbar', -- tagbar on right to get tags in file
 
-        -- Auto pairs
-        use 'windwp/nvim-autopairs' -- autopairs
-        -- use 'windwp/nvim-ts-autotag' -- typescript ?
+  {
+    'puremourning/vimspector', -- vim debugger
+    -- cmd = { "VimspectorInstall", "VimspectorUpdate" },
+    -- fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Contninue" },
+    -- config = function() require("config.vimspector").setup() end,
+  },
 
-        use 'norcalli/nvim-colorizer.lua' -- colorizer to show hex colors
+  'ThePrimeagen/vim-be-good', -- a game to improve in vim
 
-        use 'preservim/tagbar'            -- tagbar on right to get tags in file
+  -- trying out plugins
+  'jpalardy/vim-slime', -- send text to tmux pane (make sure I am using this plugin regularly)
 
-        use {
-            'puremourning/vimspector', -- vim debugger
-            -- cmd = { "VimspectorInstall", "VimspectorUpdate" },
-            -- fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Contninue" },
-            -- config = function() require("config.vimspector").setup() end,
-        }
+  'mbbill/undotree', -- undotree (figure the full use of the plugin)
 
-        use 'ThePrimeagen/vim-be-good' -- a game to improve in vim
+  -- 'xuhdev/vim-latex-live-preview' -- LLPStartPreview, opens up the preview for .tex file
 
-        -- trying out plugins
-        use 'jpalardy/vim-slime'            -- send text to tmux pane (make sure I am using this plugin regularly)
+  -- Markdown preview setup: install without yarn or npm
+  {
+    "iamcco/markdown-preview.nvim",
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
 
-        use 'mbbill/undotree'               -- undotree (figure the full use of the plugin)
+  -- ZenMode
+  "folke/zen-mode.nvim",
 
-        use 'xuhdev/vim-latex-live-preview' -- LLPStartPreview, opens up the preview for .tex file
+  -- Floating Terminal
+  'voldikss/vim-floaterm',
 
-        -- Markdown preview setup: install without yarn or npm
-        use({
-            "iamcco/markdown-preview.nvim",
-            run = function() vim.fn["mkdp#util#install"]() end,
-        })
-
-        -- ZenMode
-        use "folke/zen-mode.nvim"
-
-        -- Floating Terminal
-        use 'voldikss/vim-floaterm'
-
-        -- Trying out something like NerdTree for neovim
-        use({
-            'nvim-tree/nvim-tree.lua',
-            requires = {
-                'nvim-tree/nvim-web-devicons', -- optional, for file icons
-            },
-            tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
-        })
-    end
-)
+  -- Trying out something like NerdTree for neovim
+  {
+    'nvim-tree/nvim-tree.lua',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+  },
+}
