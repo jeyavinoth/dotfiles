@@ -1,6 +1,11 @@
+-- Set parser install directory BEFORE setup is called
+-- This must be set before any parser checks happen
+vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/treesitter")
+
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+  -- Comment out ensure_installed to prevent reinstalling on every startup
+  -- ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

@@ -40,6 +40,7 @@ return {
 
   {
     'nvim-treesitter/nvim-treesitter', -- Treesitter
+    -- build is only run when plugin is installed/updated via lazy, not on every startup
     build = ':TSUpdate'
   },
   'nvim-treesitter/nvim-treesitter-context', -- the sticky header thing at the top
@@ -96,12 +97,12 @@ return {
 
   'preservim/tagbar', -- tagbar on right to get tags in file
 
-  {
-    'puremourning/vimspector', -- vim debugger
-    -- cmd = { "VimspectorInstall", "VimspectorUpdate" },
-    -- fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Contninue" },
-    -- config = function() require("config.vimspector").setup() end,
-  },
+  -- {
+  --   'puremourning/vimspector', -- vim debugger
+  --   -- cmd = { "VimspectorInstall", "VimspectorUpdate" },
+  --   -- fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Contninue" },
+  --   -- config = function() require("config.vimspector").setup() end,
+  -- },
 
   'ThePrimeagen/vim-be-good', -- a game to improve in vim
 

@@ -12,8 +12,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- add treesitter parser directory to runtimepath
-vim.opt.rtp:append(vim.fn.stdpath("data") .. "/treesitter")
+-- Set treesitter parser directory BEFORE loading plugins
+-- This must be set before nvim-treesitter loads
+local parser_install_path = vim.fn.stdpath("data") .. "/treesitter"
+vim.opt.rtp:prepend(parser_install_path)
 
 -- set leader key before lazy.nvim setup
 vim.g.mapleader = " "

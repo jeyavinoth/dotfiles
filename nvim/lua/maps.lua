@@ -109,10 +109,10 @@ keymap.set("n", "<leader>vs", "<Plug>VimspectorStepInto", opts)
 keymap.set("n", "<C-c><C-j>", ":SlimeSend<CR>", opts)
 
 -- Tagbar
-keymap.set("n", "<leader>T", ":Tagbar<CR>", { noremap = true })
+keymap.set("n", "<leader>t", ":Tagbar<CR>", { noremap = true })
 
 -- Float Terminal
-keymap.set("n", "<leader>t", ":FloatermToggle<CR>", { noremap = true })
+keymap.set("n", "<leader>T", ":FloatermToggle<CR>", { noremap = true })
 keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true })
 
 -- Set no read only for vimdiff
