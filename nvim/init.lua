@@ -12,6 +12,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- set leader key before lazy.nvim setup
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- load base settings
 require "base"
 

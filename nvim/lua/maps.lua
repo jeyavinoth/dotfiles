@@ -1,6 +1,4 @@
 local keymap = vim.keymap
--- Remapping leaders, and window leader
-vim.g.mapleader = " " -- remap leader to space
 
 -- -- Increment/Decrement
 -- keymap.set('n', '+', '<C-a>')
