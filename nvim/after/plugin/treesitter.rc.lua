@@ -6,14 +6,14 @@ require 'nvim-treesitter.configs'.setup {
   sync_install = false,
 
   -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
+  -- Disabled to prevent reinstalling parsers on every nvim startup
+  auto_install = false,
 
   -- List of parsers to ignore installing (or "all")
   ignore_install = { "javascript" },
 
-  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+  -- Set persistent parser installation directory outside of lazy plugin path
+  parser_install_dir = vim.fn.stdpath("data") .. "/treesitter",
 
   highlight = {
     enable = true,

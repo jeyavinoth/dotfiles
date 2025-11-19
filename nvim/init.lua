@@ -12,6 +12,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- add treesitter parser directory to runtimepath
+vim.opt.rtp:append(vim.fn.stdpath("data") .. "/treesitter")
+
 -- set leader key before lazy.nvim setup
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -20,7 +23,11 @@ vim.g.maplocalleader = " "
 require "base"
 
 -- load plugins and plugin settings
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+  rocks = {
+    enabled = false,  -- disable luarocks since we don't need it
+  },
+})
 
 require "features"
 

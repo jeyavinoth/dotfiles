@@ -28,6 +28,9 @@ alias tl="tmux ls"
 # Build Tags
 alias build_ctags="ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags"
 
+# alias that I commonly use
+alias a="source ./.venv/bin/activate; python --version"
+
 
 # Bind key 
 bindkey -v
