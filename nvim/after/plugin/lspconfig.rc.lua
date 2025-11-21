@@ -17,6 +17,11 @@ vim.lsp.config.pylsp = {
   cmd = { 'pylsp' },
   filetypes = { 'python' },
   root_markers = { 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', 'Pipfile', '.git' },
+  capabilities = {
+    general = {
+      positionEncodings = { 'utf-16' }
+    }
+  },
   settings = {
     configurationSources = { "flake8" },
     formatCommand = { "black" },
@@ -57,6 +62,11 @@ vim.lsp.config.lua_ls = {
   cmd = { 'lua-language-server' },
   filetypes = { 'lua' },
   root_markers = { '.luarc.json', '.luarc.jsonc', '.luacheckrc', '.stylua.toml', 'stylua.toml', 'selene.toml', 'selene.yml', '.git' },
+  capabilities = {
+    general = {
+      positionEncodings = { 'utf-16' }
+    }
+  },
   settings = {
     Lua = {
       diagnostics = {
