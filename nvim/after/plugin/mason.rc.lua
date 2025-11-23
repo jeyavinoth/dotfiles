@@ -11,8 +11,14 @@ mason.setup({
   }
 })
 
+local status_lspconfig, mason_lspconfig = pcall(require, "mason-lspconfig")
+if (not status_lspconfig) then return end
+
 -- Install LSP servers automatically
--- You can install them manually with :Mason
 -- Servers configured in lspconfig.rc.lua:
 -- - pylsp (python-lsp-server)
 -- - lua_ls (lua-language-server)
+mason_lspconfig.setup({
+  ensure_installed = { "pylsp", "lua_ls" },
+  automatic_installation = true,
+})

@@ -30,6 +30,10 @@ if (not status_lspconfig) then return end
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
+-- Set position encoding to avoid warnings
+capabilities.general = capabilities.general or {}
+capabilities.general.positionEncodings = { 'utf-16' }
+
 local local_servers = {
     "lua_ls",
     "ts_ls",

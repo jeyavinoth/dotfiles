@@ -44,6 +44,8 @@ vim.cmd([[ colorscheme gruvbox ]])
 -- vim.cmd([[ colorscheme gruvbox ]])
 -- vim.cmd([[ colorscheme nightfox ]])
 -- vim.cmd([[ colorscheme nightfox ]])
+-- vim.cmd([[ colorscheme catppuccin ]])
+vim.cmd([[ colorscheme neosolarized ]])
 
 -- require("neosolarized").setup({ comment_italics = true })
 

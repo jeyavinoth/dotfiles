@@ -31,6 +31,7 @@ return {
 
   -- LSP setup using built-in vim.lsp.config (nvim-lspconfig is deprecated in nvim 0.11+)
   "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
 
   'onsails/lspkind-nvim', -- vscode-like pictograms
   'hrsh7th/cmp-buffer',   -- nvim-cmp source for buffer words
