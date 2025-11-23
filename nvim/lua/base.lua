@@ -129,6 +129,8 @@ vim.cmd("let g:markdown_folding = 1")
 vim.cmd("set foldlevel=20")
 
 -- Clipboard configuration - use OSC 52 for SSH clipboard support
+-- This allows clipboard to work over SSH by encoding clipboard data in escape sequences
+-- Regular y/p use vim registers, <leader>y/<leader>p use system clipboard
 vim.g.clipboard = {
   name = 'OSC 52',
   copy = {

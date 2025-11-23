@@ -43,6 +43,7 @@ vim.lsp.config.pylsp = {
         mccabe = { enabled = false },
         preload = { enabled = false },
         rope_completion = { enabled = false },
+        rope_rename = { enabled = false },
         black = { enabled = true },
         isort = { enabled = false }
       },
