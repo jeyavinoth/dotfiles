@@ -128,3 +128,16 @@ end
 vim.cmd("let g:markdown_folding = 1")
 vim.cmd("set foldlevel=20")
 
+-- Clipboard configuration - use OSC 52 for SSH clipboard support
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
+

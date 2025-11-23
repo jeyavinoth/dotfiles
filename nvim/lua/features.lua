@@ -31,6 +31,8 @@ autocmd('TextYankPost', {
 --     require('win')
 -- end
 
-vim.api.nvim_set_option('clipboard', 'unnamedplus')
+-- Commented out: Keep vim's internal registers separate from system clipboard
+-- Only <leader>y (which maps to "+y) will use the system clipboard via OSC 52
+-- vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
 
