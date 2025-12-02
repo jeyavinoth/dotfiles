@@ -1,8 +1,8 @@
 -- macOS-specific settings for Neovim
 
 -- Clipboard integration with macOS
--- Use the system clipboard for all yank/paste operations
-vim.opt.clipboard = "unnamedplus"
+-- Disabled: regular yank (y) stays within vim, use "+y for system clipboard
+-- vim.opt.clipboard = "unnamedplus"
 
 -- Set shell to use (some plugins work better with specific shell settings on macOS)
 vim.opt.shell = "/bin/zsh"

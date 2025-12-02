@@ -19,6 +19,8 @@ autocmd('TextYankPost', {
 -------------------------------------
 -- Append the different clipboards --
 -------------------------------------
+-- Disabled to keep regular yank within vim
+-- Use "+y to explicitly copy to system clipboard
 -- local has = function(x)
 --     return vim.fn.has(x) == 1
 -- end
@@ -31,6 +33,6 @@ autocmd('TextYankPost', {
 --     require('win')
 -- end
 
-vim.api.nvim_set_option('clipboard', 'unnamedplus')
+-- vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
 
