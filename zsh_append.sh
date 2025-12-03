@@ -1,3 +1,16 @@
+# Disable Python venv from modifying the prompt (we handle it manually)
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# Add virtualenv to prompt (shown at the front)
+function virtualenv_prompt_info() {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    echo "%{$fg[yellow]%}($(basename $VIRTUAL_ENV))%{$reset_color%} "
+  fi
+}
+
+# Override the simple theme prompt to include virtualenv at the front
+PROMPT='$(virtualenv_prompt_info)%(!.%{$fg[red]%}.%{$fg[green]%})%~$(git_prompt_info)%{$reset_color%} '
+
 # LS
 alias ll="ls -lhtr"
 alias l="ls -lh"
