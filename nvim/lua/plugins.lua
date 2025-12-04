@@ -76,7 +76,7 @@ return {
   'tomtom/tcomment_vim', -- gcc comment
 
   -- Git
-  -- 'airblade/vim-gitgutter' -- shows the +/- for git changes
+  'airblade/vim-gitgutter',  -- shows the +/- for git changes
   'tpope/vim-fugitive',      -- git integration
   'dinhhuy258/git.nvim',     -- git integration built on top of vim-fugitive
   'lewis6991/gitsigns.nvim', -- git integration built on top of vim-fugitive
