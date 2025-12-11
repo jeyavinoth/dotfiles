@@ -1,3 +1,7 @@
+-- Suppress deprecation warnings from plugins (lspsaga uses deprecated LSP client methods)
+-- TODO: Remove this once lspsaga updates to use client:method() syntax
+vim.deprecate = function() end
+
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

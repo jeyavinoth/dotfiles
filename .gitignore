@@ -1,3 +1,9 @@
+# My Claude Stuff
+.env
+.ruleset
+.claude
+.skills
+
 .service/
 .notes/
 
