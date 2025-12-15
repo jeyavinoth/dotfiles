@@ -104,6 +104,15 @@ vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.formatop
 -- Block Cursor
 vim.opt.guicursor = ""
 
+-- Reset cursor on exit to prevent cursor disappearing in terminal
+vim.api.nvim_create_autocmd("VimLeave", {
+    pattern = '*',
+    callback = function()
+        vim.opt.guicursor = 'a:ver25'
+        vim.fn.chansend(vim.v.stderr, "\x1b[5 q")  -- Reset to blinking bar
+    end
+})
+
 -- Vim-slime
 vim.cmd([[let g:slime_target="tmux"]]) -- using tmux for vim-slime
 vim.cmd([[let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}]]) -- defaults and send to last pane
