@@ -108,6 +108,7 @@ vim.opt.guicursor = ""
 vim.cmd([[let g:slime_target="tmux"]]) -- using tmux for vim-slime
 vim.cmd([[let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}]]) -- defaults and send to last pane
 vim.cmd([[let g:slime_dont_ask_default = 1]])
+vim.g.slime_python_ipython = 1 -- use %cpaste for proper indentation in IPython
 
 -- Latex formatting (vim-latex-live-preview)
 vim.cmd([[let g:tex_flavor = "latex"]])
