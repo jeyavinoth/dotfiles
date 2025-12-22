@@ -108,6 +108,40 @@ keymap.set("n", "<leader>vs", "<Plug>VimspectorStepInto", opts)
 -- keymap.set("n", "<C-c><C-s>", ":SlimeSend<CR>", opts)
 keymap.set("n", "<C-c><C-j>", ":SlimeSend<CR>", opts)
 
+-- Send code block between ## markers
+local function slime_send_block()
+    local current_line = vim.fn.line('.')
+    local total_lines = vim.fn.line('$')
+    local start_line = 1
+    local end_line = total_lines
+
+    -- Search backward for ## (including current line in case cursor is on ##)
+    for i = current_line, 1, -1 do
+        if vim.fn.getline(i):match('^%s*##') then
+            start_line = i + 1
+            break
+        end
+    end
+
+    -- Search forward for ##
+    for i = current_line, total_lines do
+        if vim.fn.getline(i):match('^%s*##') then
+            end_line = i - 1
+            break
+        end
+    end
+
+    -- Send the block if valid range
+    if start_line <= end_line then
+        vim.cmd(start_line .. ',' .. end_line .. 'SlimeSend')
+    else
+        -- Cursor is on a ## line or empty block
+        vim.notify("No code block to send", vim.log.levels.WARN)
+    end
+end
+
+keymap.set("n", "<C-c><C-n>", slime_send_block, { noremap = true, desc = "Send block between ## to slime" })
+
 -- Tagbar
 keymap.set("n", "<leader>t", ":Tagbar<CR>", { noremap = true })
 
