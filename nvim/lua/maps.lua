@@ -115,17 +115,17 @@ local function slime_send_block()
     local start_line = 1
     local end_line = total_lines
 
-    -- Search backward for ## (including current line in case cursor is on ##)
+    -- Search backward for # # (including current line in case cursor is on # #)
     for i = current_line, 1, -1 do
-        if vim.fn.getline(i):match('^%s*##') then
+        if vim.fn.getline(i):match('^%s*# #') then
             start_line = i + 1
             break
         end
     end
 
-    -- Search forward for ##
+    -- Search forward for # #
     for i = current_line, total_lines do
-        if vim.fn.getline(i):match('^%s*##') then
+        if vim.fn.getline(i):match('^%s*# #') then
             end_line = i - 1
             break
         end
@@ -135,12 +135,12 @@ local function slime_send_block()
     if start_line <= end_line then
         vim.cmd(start_line .. ',' .. end_line .. 'SlimeSend')
     else
-        -- Cursor is on a ## line or empty block
+        -- Cursor is on a # # line or empty block
         vim.notify("No code block to send", vim.log.levels.WARN)
     end
 end
 
-keymap.set("n", "<C-c><C-n>", slime_send_block, { noremap = true, desc = "Send block between ## to slime" })
+keymap.set("n", "<C-c><C-n>", slime_send_block, { noremap = true, desc = "Send block between # # to slime" })
 
 -- Tagbar
 keymap.set("n", "<leader>t", ":Tagbar<CR>", { noremap = true })
@@ -166,7 +166,8 @@ vim.keymap.set("n", "<leader>cd", ":Copilot disable <CR>", {})
 vim.keymap.set("n", "<leader>ce", ":Copilot enable <CR>", {})
 
 -- Diagnostics
-vim.keymap.set('n', '<C-k>i', vim.diagnostic.open_float, { noremap = true, silent = true })
+-- vim.keymap.set('n', '<C-k>i', vim.diagnostic.open_float, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>k', vim.diagnostic.open_float, { noremap = true, silent = true })
 
 -- quiCk fix next and after
 vim.keymap.set('n', '<M-j>', "<cmd>cnext<CR>")
