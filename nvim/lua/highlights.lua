@@ -35,6 +35,7 @@ vim.cmd([[ colorscheme gruvbox ]])
 -- vim.cmd([[ let g:molokai_original = 1 ]])
 -- vim.cmd([[ let g:rehash256 = 1 ]])
 
+-- vim.cmd([[ colorscheme atom-dark ]])
 -- vim.cmd([[ colorscheme nordfox ]])
 -- vim.cmd([[ colorscheme dracula ]])
 -- vim.cmd([[ colorscheme ayu-dark ]])

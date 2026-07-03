@@ -6,7 +6,11 @@ gruvbox.setup({
     underline = true,
     bold = false,
     italic = {
-     comments = true,
+     strings = false,
+     emphasis = false,
+     comments = false,
+     operators = false,
+     folds = false,
     },
     strikethrough = true,
     invert_selection = false,
