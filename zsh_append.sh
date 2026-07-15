@@ -8,8 +8,12 @@ function virtualenv_prompt_info() {
   fi
 }
 
+# NOTE: This PROMPT override used to clobber the oh-my-zsh theme (ZSH_THEME in
+# ~/.zshrc), because this file is sourced *after* oh-my-zsh.sh. It is disabled so
+# the selected theme (e.g. agnoster) controls the prompt. Agnoster has its own
+# virtualenv segment, which requires VIRTUAL_ENV_DISABLE_PROMPT (set above).
 # Override the simple theme prompt to include virtualenv at the front
-PROMPT='$(virtualenv_prompt_info)%(!.%{$fg[red]%}.%{$fg[green]%})%~$(git_prompt_info)%{$reset_color%} '
+# PROMPT='$(virtualenv_prompt_info)%(!.%{$fg[red]%}.%{$fg[green]%})%~$(git_prompt_info)%{$reset_color%} '
 
 # LS
 alias ll="ls -lhtr"
