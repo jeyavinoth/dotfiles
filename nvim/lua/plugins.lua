@@ -94,7 +94,10 @@ return {
   'nvim-lua/plenary.nvim', -- common utilities
   {
     'nvim-telescope/telescope.nvim', -- Telescope (fuzzy file finder)
-    branch = '0.1.x',
+    -- master (not the abandoned 0.1.x) uses native vim.treesitter APIs and is
+    -- compatible with the nvim-treesitter `main` branch rewrite. 0.1.x still
+    -- calls the removed nvim-treesitter.parsers.ft_to_lang() and crashes previews.
+    branch = 'master',
   },
   'nvim-telescope/telescope-file-browser.nvim',
   'ThePrimeagen/harpoon', -- harpoon to fast switching files
